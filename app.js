@@ -6,10 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var inventionsRouter = require('./routes/inventions');
 
 var app = express();
-
-var inventionsRouter = require('./routes/inventions');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

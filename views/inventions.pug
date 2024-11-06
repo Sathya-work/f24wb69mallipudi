@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to Invetion's webpage
+  h1 Search Results - Inventions
+
+  - 
+    const results = [
+      {name: 'Telephone', year: 1876, inventor: 'Alexander Graham Bell'},
+      {name: 'Light Bulb', year: 1879, inventor: 'Thomas Edison'},
+      {name: 'Airplane', year: 1903, inventor: 'Wright Brothers'}
+    ]
+
+  .container-fluid
+    .row
+      each item in results
+        .col-sm-2
+          h3 #{item.name}
+          p Year: #{item.year}
+          p Inventor: #{item.inventor}
+  
+  a(href='/') Back to Home
