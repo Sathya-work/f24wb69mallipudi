@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var inventionsRouter = require('./routes/inventions');
 var gridRouter = require('./routes/grid')
+var pickRouter = require('./routes/pick');
 
 var app = express();
 
@@ -24,7 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/inventions', inventionsRouter);
-app.use('/grid', gridRouter); 
+app.use('/grid', gridRouter);
+
+app.use('/selector', pickRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
